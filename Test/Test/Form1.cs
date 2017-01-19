@@ -231,6 +231,7 @@ namespace Test
         private void btnSaveRec_Click(object sender, EventArgs e)
         {
             Eigen_Rec.Save_Eigen_Recogniser(Application.StartupPath + "\\CapturedFaces\\Recogniser.EFR");
+            txtLog.AppendText("Recogniser Saved\n");
         }
 
         private void chkDefault_CheckedChanged(object sender, EventArgs e)
@@ -301,7 +302,7 @@ namespace Test
             {
                 txtLog.AppendText(string.Format("({0}/{1} bytes) {2}\n", e.Transferred, (e.TransferSize >= 0) ? e.TransferSize.ToString() : "?", e.Filename));
                 if (e.Transferred == e.TransferSize)
-                    txtLog.AppendText(e.Filename + " Sent successfully");
+                    txtLog.AppendText(e.Filename + " Sent successfully\n");
             }
         }
 
@@ -366,7 +367,10 @@ namespace Test
 
         private void btnUpdateRec_Click(object sender, EventArgs e)
         {
-            Eigen_Rec.Retrain();
+            if (Eigen_Rec.Retrain())
+                txtLog.AppendText("Recogniser updated successfully\n");
+            else
+                txtLog.AppendText("Error updating recogniser, check filepaths\n");
         }
     }
 }

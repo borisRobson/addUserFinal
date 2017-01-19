@@ -1,0 +1,4 @@
+Q:\Projects\TFTPClient\Library\bin\Debug\TFTPLibrary.Client.dll
+Q:\Projects\TFTPClient\Library\bin\Debug\TFTPLibrary.Client.pdb
+Q:\Projects\TFTPClient\Library\obj\Debug\TFTPLibrary.Client.dll
+Q:\Projects\TFTPClient\Library\obj\Debug\TFTPLibrary.Client.pdb
